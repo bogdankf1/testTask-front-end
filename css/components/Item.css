@@ -1,0 +1,9 @@
+.Item {
+  width: 100px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: rgb(30, 235, 149);
+  text-align: center;
+  border-radius: 10px;
+  font-size: 200%;
+}

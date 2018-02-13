@@ -1,0 +1,16 @@
+.Root {
+  width: 100px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: rgb(235, 30, 30);
+  text-align: center;
+  border-radius: 10px;
+  font-size: 200%;
+}
+
+.Root div {
+  color: white;
+  font-weight: bold;
+  cursor: cell;
+}

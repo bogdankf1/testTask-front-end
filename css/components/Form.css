@@ -1,0 +1,15 @@
+.Form {
+  margin-left: auto;
+  width: 20%;
+  background-color: rgba(213, 213, 213, 0.41);
+  border-radius: 10px;
+}
+
+.save-button {
+  width: 100%;
+}
+
+.Form h2 {
+  text-align: center;
+  font-size: 1.2em;
+}
