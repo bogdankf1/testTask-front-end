@@ -1962,7 +1962,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Item = __webpack_require__(80);
+var _Item = __webpack_require__(77);
 
 var _Item2 = _interopRequireDefault(_Item);
 
@@ -1974,6 +1974,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var FileInput = function FileInput() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'file-field input-field' },
+    _react2.default.createElement(
+      'div',
+      { className: 'btn' },
+      _react2.default.createElement(
+        'span',
+        null,
+        'File'
+      ),
+      _react2.default.createElement('input', { type: 'file', id: 'file' })
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'file-path-wrapper' },
+      _react2.default.createElement('input', { className: 'file-path validate', type: 'text' })
+    )
+  );
+};
+
+var TitleInput = function TitleInput() {
+  return _react2.default.createElement('input', { placeholder: 'Item title', id: 'title', type: 'text', className: 'validate' });
+};
+
 var Form = function (_Component) {
   _inherits(Form, _Component);
 
@@ -1983,7 +2009,8 @@ var Form = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this));
 
     _this.state = {
-      showItem: false
+      showItem: false,
+      showForm: true
     };
     return _this;
   }
@@ -1991,7 +2018,10 @@ var Form = function (_Component) {
   _createClass(Form, [{
     key: 'addItem',
     value: function addItem(e) {
-      this.setState({ showItem: true });
+      this.setState({
+        showItem: true,
+        showForm: false
+      });
     }
   }, {
     key: 'render',
@@ -2010,26 +2040,8 @@ var Form = function (_Component) {
           _react2.default.createElement(
             'form',
             null,
-            _react2.default.createElement('input', { placeholder: 'Item title', id: 'title', type: 'text', className: 'validate' }),
-            _react2.default.createElement(
-              'div',
-              { className: 'file-field input-field' },
-              _react2.default.createElement(
-                'div',
-                { className: 'btn' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'File'
-                ),
-                _react2.default.createElement('input', { type: 'file', id: 'file' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'file-path-wrapper' },
-                _react2.default.createElement('input', { className: 'file-path validate', type: 'text' })
-              )
-            ),
+            _react2.default.createElement(TitleInput, null),
+            _react2.default.createElement(FileInput, null),
             _react2.default.createElement(
               'a',
               { onClick: this.addItem.bind(this), className: 'waves-effect waves-light btn save-button' },
@@ -21403,11 +21415,11 @@ var _Form = __webpack_require__(30);
 
 var _Form2 = _interopRequireDefault(_Form);
 
-var _User = __webpack_require__(77);
+var _User = __webpack_require__(78);
 
 var _User2 = _interopRequireDefault(_User);
 
-var _Page = __webpack_require__(78);
+var _Page = __webpack_require__(79);
 
 var _Page2 = _interopRequireDefault(_Page);
 
@@ -21415,7 +21427,7 @@ var _reactRedux = __webpack_require__(20);
 
 var _redux = __webpack_require__(8);
 
-var _PageActions = __webpack_require__(79);
+var _PageActions = __webpack_require__(80);
 
 var pageActions = _interopRequireWildcard(_PageActions);
 
@@ -21564,6 +21576,75 @@ exports.default = Root;
 
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Item = function (_Component) {
+  _inherits(Item, _Component);
+
+  function Item() {
+    _classCallCheck(this, Item);
+
+    return _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).apply(this, arguments));
+  }
+
+  _createClass(Item, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "Item" },
+        _react2.default.createElement(
+          "h1",
+          null,
+          "ITEM"
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          "Image"
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          "+"
+        ),
+        _react2.default.createElement(
+          "div",
+          null,
+          "-"
+        )
+      );
+    }
+  }]);
+
+  return Item;
+}(_react.Component);
+
+exports.default = Item;
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
 		value: true
 });
 
@@ -21624,7 +21705,7 @@ User.propTypes = {
 };
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21725,7 +21806,7 @@ Page.propTypes = {
 };
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21744,75 +21825,6 @@ function setYear(year) {
     payload: year
   };
 }
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Item = function (_Component) {
-  _inherits(Item, _Component);
-
-  function Item() {
-    _classCallCheck(this, Item);
-
-    return _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).apply(this, arguments));
-  }
-
-  _createClass(Item, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "Item" },
-        _react2.default.createElement(
-          "h1",
-          null,
-          "ITEM"
-        ),
-        _react2.default.createElement(
-          "div",
-          null,
-          "Image"
-        ),
-        _react2.default.createElement(
-          "div",
-          null,
-          "+"
-        ),
-        _react2.default.createElement(
-          "div",
-          null,
-          "-"
-        )
-      );
-    }
-  }]);
-
-  return Item;
-}(_react.Component);
-
-exports.default = Item;
 
 /***/ })
 /******/ ]);
